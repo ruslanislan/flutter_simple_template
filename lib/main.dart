@@ -2,13 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_simple_template/screens/collection/collection.dart';
-import 'package:flutter_simple_template/screens/navigator/navigator.dart';
 import 'package:flutter_simple_template/screens/premium_screen.dart';
-import 'package:flutter_simple_template/screens/quiz/quiz.dart';
 import 'package:flutter_simple_template/screens/screens.dart';
 import 'package:flutter_simple_template/screens/settings/settings.dart';
-import 'package:flutter_simple_template/screens/store/store_view.dart';
 import 'package:flutter_simple_template/services/preference_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 class NavigatorModel extends ChangeNotifier {
   late final GoRouter goRouter;
+  bool firstInit = true;
 
   final List<Item> items = [
     const Item(

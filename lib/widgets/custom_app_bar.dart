@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_simple_template/utils/utils.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key, this.coins = 0}) : super(key: key);
+  const CustomAppBar({Key? key, required this.coins, required this.level})
+      : super(key: key);
   final int coins;
+  final int level;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    '1/50',
+                    '$level/50',
                     style: AppThemes.helper2,
                   )
                 ],

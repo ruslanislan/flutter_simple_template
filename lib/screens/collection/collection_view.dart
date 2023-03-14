@@ -14,13 +14,16 @@ class CollectionView extends StatelessWidget {
     final storeModel = context.read<StoreModel>();
     return Column(
       children: [
-        CustomAppBar(coins: storeModel.coins),
+        CustomAppBar(
+          coins: storeModel.coins,
+          level: storeModel.level + 1,
+        ),
         Expanded(
           child: GridView.builder(
             padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 20.h),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
-              childAspectRatio: 80.w / 117.w,
+              childAspectRatio: 80.w / 117.h,
               mainAxisSpacing: 8.h,
               crossAxisSpacing: 8.w,
             ),

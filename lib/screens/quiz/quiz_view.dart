@@ -22,7 +22,10 @@ class QuizView extends StatelessWidget {
         ) {
           return Column(
             children: [
-              CustomAppBar(coins: storeModel.coins),
+              CustomAppBar(
+                coins: storeModel.coins,
+                level: storeModel.level + 1,
+              ),
               SizedBox(height: 20.h),
               Container(
                 padding: EdgeInsets.all(20.r),

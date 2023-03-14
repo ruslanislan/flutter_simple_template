@@ -20,7 +20,10 @@ class StoreView extends StatelessWidget {
               (value.counter + 1) * value.selectedHint!.price <= value.coins;
           return Column(
             children: [
-              CustomAppBar(coins: value.coins),
+              CustomAppBar(
+                coins: value.coins,
+                level: storeModel.level + 1,
+              ),
               ...List.generate(
                 value.hints.length,
                 (index) {

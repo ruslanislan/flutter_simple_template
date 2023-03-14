@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_simple_template/screens/premium_screen.dart';
 import 'package:flutter_simple_template/screens/screens.dart';
 import 'package:flutter_simple_template/utils/app_themes.dart';
 import 'package:flutter_simple_template/widgets/custom_app_bar.dart';
@@ -14,7 +15,10 @@ class SettingsView extends StatelessWidget {
     final storeModel = context.watch<StoreModel>();
     return Column(
       children: [
-        CustomAppBar(coins: storeModel.coins),
+        CustomAppBar(
+          coins: storeModel.coins,
+          level: storeModel.level + 1,
+        ),
         SizedBox(height: 20.h),
         _buildButton(storeModel, context),
         SizedBox(height: 16.h),
@@ -42,7 +46,15 @@ class SettingsView extends StatelessWidget {
         onTap: storeModel.getDailyMoney,
       );
     }
-    return PremiumButton(onTap: () => context.go('/premium_screen'));
+    return PremiumButton(onTap: () {
+      final route = MaterialPageRoute(builder: (BuildContext context) {
+        return const PremiumScreen();
+      });
+      Navigator.of(
+        context,
+        rootNavigator: true,
+      ).push(route);
+    });
   }
 }
 

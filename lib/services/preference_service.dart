@@ -16,15 +16,15 @@ class PreferenceService {
   static const _lastUpdatedKey = "LAST_UPDATED_KEY";
 
   int getRandomHintCount() {
-    return preferences.getInt(randomHintKey) ?? 0;
+    return preferences.getInt(randomHintKey) ?? 1;
   }
 
   int getSelectedHintCount() {
-    return preferences.getInt(selectedHintKey) ?? 0;
+    return preferences.getInt(selectedHintKey) ?? 1;
   }
 
   int getWordHintCount() {
-    return preferences.getInt(wordHintKey) ?? 0;
+    return preferences.getInt(wordHintKey) ?? 1;
   }
 
   int getCoins() {
@@ -70,6 +70,6 @@ class PreferenceService {
 
   String getLastUpdated() {
     return preferences.getString(_lastUpdatedKey) ??
-        DateTime.now().toIso8601String();
+        DateTime.now().subtract(const Duration(days: 1)).toIso8601String();
   }
 }

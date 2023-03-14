@@ -30,7 +30,7 @@ class PremiumScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: GestureDetector(
-                        onTap: () => context.go('/settings'),
+                        onTap: () => Navigator.pop(context),
                         child: Padding(
                           padding: EdgeInsets.only(top: 16.h, right: 16.w),
                           child: Image.asset(
@@ -45,7 +45,7 @@ class PremiumScreen extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         storeModel.buyPremium();
-                        context.go('/settings');
+                        Navigator.pop(context);
                       },
                       child: Container(
                         width: 343.w,
@@ -80,7 +80,7 @@ class PremiumScreen extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            'Get premium for \$0.99',
+                            'Buy premium for \$0.99',
                             style: AppThemes.helper5,
                           ),
                         ),
