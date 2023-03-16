@@ -11,7 +11,7 @@ void main() async {
   runZonedGuarded(
       () => runApp(
             ScreenUtilInit(
-              designSize: const Size(367, 812),
+              designSize: const Size(375, 812),
               builder: (BuildContext context, Widget? child) => MyApp(
                 preferences: preference,
               ),
